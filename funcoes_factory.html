@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Funções Factory </title>
+</head>
+<body>
+    
+    <h1> Funções Factory </h1>
+
+    <p> A convenção de funções Factory está relacionada à necessidade de instanciar dois ou mais objetos literais, sendo que estes são do mesmo tipo. Essa instanciação de objetos se dá através de funções construtoras. </p>
+    <p> O padrão Factory para declaração de funções é caracterizado por funções que tenham como retorno um objeto literal. </p>
+    
+    <script>
+        
+        let usuario = (nome, email) => {
+                return {
+                    nome, 
+                    idade: undefined, 
+                    email, 
+                    setIdade(anoNasc) {
+                        let today = new Date(); 
+                        this.idade = today.getFullYear() - anoNasc; 
+                    }
+                }
+        }
+
+        let user = usuario('Username','username@email.com'); 
+
+        user.setIdade(1995); 
+
+        document.write(
+            `Usuário recuperado: ${user} <br>
+            Nome do usuário: ${user.nome} <br>
+            Idade do usuário: ${user.idade} anos <br>
+            Endereço de e-mail: ${user.email} <br>`
+        ); 
+    </script>
+
+</body>
+</html>
