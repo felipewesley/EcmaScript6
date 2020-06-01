@@ -1,0 +1,29 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Arrow Functions JS </title>
+    <script>
+        // Constante definida para ser o parâmetro padrão das funções
+        // Constantes também foram uma novidade do ECMAScript 6
+        const VALOR = 4; 
+        
+        // Uma função anônima declarada no formato padrão JS
+        var quadrado1 = function(num) {
+            // Lógica da função
+            return Math.pow(num, 2); 
+        }
+        // Chamada da funcao imprimindo o resultado no console
+        console.log('Pelo padrão var (JS) o resultado é ' + quadrado1(VALOR)); 
+
+        // Uma função anônima declarada de acordo com a especificação ES6
+        let quadrado2 = num => Math.pow(num, 2); 
+        // Chamada da funcao imprimindo o resultado no console
+        console.log(`Utilizando padrão let (ES6) o resultado é ${quadrado2(VALOR)}`); 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
