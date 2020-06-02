@@ -1,16 +1,77 @@
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Funções Factory </title>
+    <style>
+         .declaracao_obj {
+             display: inline-block; 
+             padding: 10px; 
+         }
+    </style>
 </head>
 <body>
     
     <h1> Funções Factory </h1>
 
-    <p> A convenção de funções Factory está relacionada à necessidade de instanciar dois ou mais objetos literais, sendo que estes são do mesmo tipo. Essa instanciação de objetos se dá através de funções construtoras. </p>
-    <p> O padrão Factory para declaração de funções é caracterizado por funções que tenham como retorno um objeto literal. </p>
+    <p> 
+        A convenção de funções Factory está relacionada à necessidade de instanciar dois ou mais objetos literais, sendo que estes são do mesmo tipo. Essa instanciação de objetos se dá através de funções construtoras. 
+    </p>
+    <p> 
+        O padrão Factory para declaração de funções é caracterizado por funções que tenham como retorno um objeto literal. 
+    </p>
+
+    <div>
+        <span class="declaracao_obj">
+            <p>
+<h3> Objetos literais </h3>
+<pre>
+let obj = {
+    nome: 'nome do usuario',
+    idade: 99,
+    email,
+    setEmail() { this.email = `${this.nome}@email.com`; }
+}
+</pre>
+            </p>
+        </span>
+
+        <span class="declaracao_obj">
+            <p>
+<h3> Objetos por funções construtoras </h3>
+<pre>
+let obj = (nome, idade) => {
+    return {
+        nome,
+        idade,
+        email = undefined,
+        setEmail = () => this.email = `${this.nome}@email.com`
+    }
+}
+</pre>
+            </p>
+        </span>
+
+        <span class="declaracao_obj">
+            <p>
+<h3> Objetos por classes </h3>
+<pre>
+class Obj {
+    construct(nome, idade) {
+        this.nome = nome,
+        this.idade = idade,
+        this.email = `${nome}@email.com`
+    }
+    setEmail() { this.email = `${this.nome}@email.com`; }
+    }
+}
+</pre>
+            </p>
+        </span>
+    </div>
     
+    <hr>
+
     <script>
         
         let usuario = (nome, email) => {
