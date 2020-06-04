@@ -1,0 +1,121 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Operador Rest/Spread </title>
+</head>
+<body>
+    <style>
+        .sessao {
+            padding: 7.5px; 
+            margin: 5px;
+            width: 700px; 
+            max-width: 90%;
+            border: 2px solid black;
+        }
+
+        #desc1 {
+            border: 1px solid #000;
+            padding: 7.5px;
+        }
+
+        section.aplication span {
+            display: inline;
+        }
+
+        span.aplicacao_op {
+            width: 23vw;
+        }
+
+        .ex_code {
+            font: 1em Comic, sans-serif; 
+            padding: 3px;
+            display: inline;
+            background-color: #2B2B2B;
+            color: #FFF;
+            border-radius: 7.5px;
+        }
+
+        span#function {
+            color: cyan;
+        }
+
+        span#nome_function {
+            color: rgb(6, 223, 6);
+        }
+
+        span#operador_function {
+            color: crimson;
+        }
+
+        span#parm_function {
+            color: darkorange;
+        }
+    </style>
+
+    <section class="sessao content">
+        <h1> Operador REST/SPREAD </h1>
+
+        <div id="identificacao">
+            Este operador é representado por <strong> ... </strong> <br><br>
+            <i> Ex.: </i> <br>
+            <div class="ex_code">
+                <strong>
+                    <span id="function"><i>function</i></span> 
+                    <span id="nome_function">fazerAlgumaCoisa</span>(
+                    <span id="operador_function">...</span><span id="parm_function"><i>coisa</i></span>
+                    ) { }
+                </strong>
+            </div>
+        </div>
+
+        <p>
+            <cite id="op_description">
+                REST e SPREAD, na verdade, se referem ao mesmo operador. <br>
+                O que diferencia um do outro é contexto no qual este operador é aplicado. 
+            </cite>
+        </p>
+        <ul>
+            <li> REST é aplicado onde valores isolados são unidos como elementos em um objeto Array. </li>
+            <li> SPREAD é aplicado quando, a partir de um Array, deseja obter-se cada elemento de maneira isolada. </li>
+        </ul>
+        Além disso, este operador geralmente é utilizado no recebimento de parâmetros de funções em JS. <br>
+        Mas por quê?
+        <p>
+            Por padrão, funções em JavaScript esperam uma quantidade fixa de parâmetros. Se mais argumentos forem passados na chamada da função além daqueles que já são esperados na assinatura da função, o JavaScript não retorna erro e não interrompe a execução do script. Isso é bom, pois já há nativamente este recurso que garante que uma chamada de função com assinatura diferente da esperada não quebre a aplicação. 
+        </p>
+        <p>
+            Porém, este recurso REST/SPREAD está disponível justamente para trazer um dinamização às assinaturas das funções, abrindo um novo universo de possibilidades e abertura de diversas novas linhas de raciocínio. <br>
+            Este recurso consiste em recuperar todo e qualquer argumento, independente se era esperado ou não, e passá-los ao escopo da função no formato de um array ordenado, de acordo com a sequência passada. Sendo assim, o parâmetro recebido em array pode ser submetido a estruturas de repetição ou métodos nativos do tipo Array, como o forEach por exemplo. 
+        </p>
+        <p>
+            Esta prática garante que suas funções se tornem muito mais dinâmicas se comparadas aos padrões de assinaturas convencionais. 
+        </p>
+    </section>
+    <section class="sessao aplication">
+    <!----------------------------------------------------------->
+    <h2> Aplicação do operador </h2>
+    <span class="aplicacao_op">
+        <h4> Assinatura convencional de uma função </h4>
+<pre>
+function somarValores(n1, n2){
+    return n1 + n2
+}
+</pre>
+    </span>
+    <!----------------------------------------------------------->
+    <span class="aplicacao_op">
+        <h4> Assinatura utilizando operador REST </h4>
+<pre>
+function somarValores(...num){
+    let result = 0
+    num.forEach(element => result += element)
+    return result
+}
+</pre>
+    </span>
+    <!----------------------------------------------------------->
+    </section>
+    
+</body>
+</html>
